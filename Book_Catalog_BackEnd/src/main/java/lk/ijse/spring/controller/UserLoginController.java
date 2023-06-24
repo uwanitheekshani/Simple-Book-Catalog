@@ -1,5 +1,7 @@
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.UserDTO;
+import lk.ijse.spring.service.UserService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,13 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class UserLoginController {
     @Autowired
-    CustomerService service;
+    UserService service;
 
     @GetMapping(params = "email")
-    public ResponseUtil checkCustomer(String email) {
+    public ResponseUtil checkUser(String email) {
         System.out.println(email);
-        CustomerDTO customerDTO = service.searchCustomerByEmail(email);
-        System.out.println(customerDTO);
-        return new ResponseUtil("200", "Login Success", customerDTO);
+        UserDTO userDTO = service.searchUserByEmail(email);
+        System.out.println(userDTO);
+        return new ResponseUtil("200", "Login Success", userDTO);
     }
 }

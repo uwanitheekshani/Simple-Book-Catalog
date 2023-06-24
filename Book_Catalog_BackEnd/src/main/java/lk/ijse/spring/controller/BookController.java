@@ -1,12 +1,14 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.BookDTO;
+import lk.ijse.spring.entity.Book;
 import lk.ijse.spring.service.BookService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author acer on 6/24/2023.
@@ -49,4 +51,8 @@ public class BookController {
 //        BookDTO book = service.searchBookByTitle(title);
 //        return new ResponseUtil("200"," Success.!",book);
 //    }
+@GetMapping("/books/search")
+public List<Book> searchBooks(@RequestParam("q") String searchTerm) {
+    return service.searchByTitleOrAuthor(searchTerm);
+}
 }

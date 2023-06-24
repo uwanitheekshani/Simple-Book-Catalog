@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author acer on 6/24/2023.
@@ -60,5 +61,9 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookDTO searchBookByTitle(String title) {
         return mapper.map( repo.findBookByTitle(title),BookDTO.class);
+    }
+
+    public List<Book> searchByTitleOrAuthor(String searchTerm) {
+        return repo.searchByTitleOrAuthor(searchTerm);
     }
 }

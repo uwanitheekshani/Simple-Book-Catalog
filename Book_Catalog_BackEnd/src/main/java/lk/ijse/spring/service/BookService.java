@@ -1,8 +1,10 @@
 package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.BookDTO;
+import lk.ijse.spring.entity.Book;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author acer on 6/24/2023.
@@ -19,4 +21,6 @@ public interface BookService {
     public ArrayList<BookDTO> getAllBooks();
 
     public BookDTO searchBookByTitle(String title);
+
+    public List<Book> searchByTitleOrAuthor(String searchTerm);
 }

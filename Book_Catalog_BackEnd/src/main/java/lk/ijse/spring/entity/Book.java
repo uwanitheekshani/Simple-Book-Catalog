@@ -8,6 +8,7 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 /**
  * @author acer on 6/24/2023.
@@ -26,5 +27,6 @@ public class Book {
     private String title;
     private String author;
     private BigDecimal price;
+    private LocalDate date;
 
 }

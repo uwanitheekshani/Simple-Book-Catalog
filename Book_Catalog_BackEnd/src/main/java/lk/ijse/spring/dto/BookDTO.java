@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 /**
  * @author acer on 6/24/2023.
@@ -21,4 +22,5 @@ public class BookDTO {
     private String title;
     private String author;
     private double price;
+    private LocalDate date;
 }

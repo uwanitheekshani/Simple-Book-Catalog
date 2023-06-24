@@ -15,6 +15,13 @@ import java.util.ArrayList;
 @Service
 @Transactional
 public class BookServiceImpl implements BookService {
+
+    @Autowired
+    private CustomerRepo repo;
+
+    @Autowired
+    private ModelMapper mapper;
+
     @Override
     public void addBook(BookDTO dto) {
 

@@ -59,7 +59,7 @@ $("#btnUpdate").click(function () {
     // let date = $("#txtDate").val();
 
     var book = {
-        id: bookID,
+        bookId: bookID,
         category: bookCategory,
         title: bookTitle,
         author: bookAuthor,
@@ -94,7 +94,7 @@ function loadAllBooks() {
         success: function (resp) {
             console.log(resp);
             for (let book of resp.data) {
-                var row = '<tr><td>' + book.id + '</td><td>' + book.category + '</td><td>' + book.title + '</td><td>' + book.author + '</td><td>' + book.price + '</td></tr>';
+                var row = '<tr><td>' + book.bookId + '</td><td>' + book.category + '</td><td>' + book.title + '</td><td>' + book.author + '</td><td>' + book.price + '</td></tr>';
                 $("#tblBook").append(row);
             }
             bindRowClickEvents();
@@ -113,8 +113,6 @@ function bindRowClickEvents() {
         let title = $(this).children(":eq(2)").text();
         let author = $(this).children(":eq(3)").text();
         let price = $(this).children(":eq(4)").text();
-        // let date = $(this).children(":eq(5)").text();
-        // console.log(id, name, address, salary);
 
         //setting table details values to text fields
         $('#txtBookID').val(id);

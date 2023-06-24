@@ -41,12 +41,12 @@ public class BookController {
     @GetMapping
     public ResponseUtil getAllBook(){
         ArrayList<BookDTO> allBooks = service.getAllBooks();
-        return new ResponseUtil("200"," Success.!",getAllBook());
+        return new ResponseUtil("200"," Success.!",allBooks);
     }
 
-    @GetMapping(params = "title")
-    public ResponseUtil searchBookByTitle(String title){
-        BookDTO book = service.searchBookByTitle(title);
-        return new ResponseUtil("200"," Success.!",book);
-    }
+//    @GetMapping(params = "title")
+//    public ResponseUtil searchBookByTitle(String title){
+//        BookDTO book = service.searchBookByTitle(title);
+//        return new ResponseUtil("200"," Success.!",book);
+//    }
 }

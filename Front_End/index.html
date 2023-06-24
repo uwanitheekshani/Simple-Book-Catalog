@@ -79,7 +79,7 @@
                                 <label class="form-check-label" for="form1Example3"> Remember password </label>
                             </div>
 
-                            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                            <button class="btn btn-primary btn-lg btn-block" id="btnLogin" type="button">Login</button>
 
                             <hr class="my-4">
 
@@ -93,34 +93,46 @@
 
 <!--Books content-->
 <main class="container-fluid" id="bookContent" style="display: none">
-    <section class="row">
+    <section class="row" id="bookM" style="top: 100px">
         <div class="col-4">
-            <h1>Customer Registraion</h1>
-            <form id="customerForm">
+            <h1 style="color: chocolate;font-size: 30px;">Manage Books</h1>
+            <form id="booksForm">
                 <div class="form-group">
-                    <label for="txtCustomerID">Customer ID</label>
-                    <input class="form-control" id="txtCustomerID" type="text" name="id">
-                    <span class="control-error" id="lblcusid"></span>
+                    <label for="txtBookID">Book ID</label>
+                    <input class="form-control" id="txtBookID" type="text" name="id">
+                    <span class="control-error" id="lblbookid"></span>
                 </div>
                 <div class="form-group">
-                    <label for="txtCustomerName">Customer Name</label>
-                    <input class="form-control" id="txtCustomerName" type="text" name="name">
-                    <span class="control-error" id="lblcusname"></span>
+                    <label for="txtCategory">Book Category</label>
+                    <input class="form-control" id="txtCategory" type="text" name="category">
+                    <span class="control-error" id="lblbookcategory"></span>
                 </div>
                 <div class="form-group">
-                    <label for="txtCustomerAddress">Customer Address</label>
-                    <input class="form-control" id="txtCustomerAddress" type="text" name="address">
-                    <span class="control-error" id="lblcusaddress"></span>
+                    <label for="txtTitle">Book Title</label>
+                    <input class="form-control" id="txtTitle" type="text" name="title">
+                    <span class="control-error" id="lblbooktitle"></span>
                 </div>
                 <div class="form-group">
-                    <label for="txtCustomerSalary">Customer Salary</label>
-                    <input class="form-control" id="txtCustomerSalary" type="text" name="salary">
-                    <span class="control-error" id="lblcussalary"></span>
+                    <label for="txtAuthor">Author</label>
+                    <input class="form-control" id="txtAuthor" type="text" name="author">
+                    <span class="control-error" id="lblbookauthor"></span>
                 </div>
+                <div class="form-group">
+                    <label class="">Price :</label>
+                    <input class="form-control" id="txtBookPrice" type="text" name="price">
+                    <span class="control-error" id="lblbookprice"></span>
+                </div>
+                <div class="form-groupInD">
+                    <label for="txtDate">Date</label>
+                    <input class="form-control" id="txtDate" type="date" name="date">
+                    <span class="control-error" id="lblday"></span>
+                </div>
+
+
             </form>
-            <div class="btn-group">
-                <button class="btn btn-primary" id="btnCustomer" type="button">Save Customer</button>
-                <button class="btn btn-danger" id="btnCusDelete" type="button">Remove</button>
+            <div class="btn-group" style="top: 40px">
+                <button class="btn btn-primary" id="btnBook" type="button">Save Book</button>
+                <button class="btn btn-danger" id="btnDelete" type="button">Remove</button>
                 <button class="btn btn-warning" id="btnUpdate" type="button">Update</button>
                 <button class="btn btn-success" id="btnGetAll" type="button">Get All</button>
                 <button class="btn btn-danger" id="btn-clear1" type="button">Clear All</button>
@@ -131,13 +143,15 @@
             <table class="table table-bordered table-hover">
                 <thead class="bg-danger text-white">
                 <tr>
-                    <th>Customer ID</th>
-                    <th>Customer Name</th>
-                    <th>Customer Address</th>
-                    <th>Customer Salary</th>
+                    <th>Book ID</th>
+                    <th>Category</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Date</th>
                 </tr>
                 </thead>
-                <tbody id="tblCustomer">
+                <tbody id="tblBook">
 
                 </tbody>
             </table>

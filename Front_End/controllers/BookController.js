@@ -56,7 +56,7 @@ $("#btnUpdate").click(function () {
     let bookTitle = $("#txtTitle").val();
     let bookAuthor = $("#txtAuthor").val();
     let bookPrice = $("#txtBookPrice").val();
-    let date = $("#txtDate").val();
+    // let date = $("#txtDate").val();
 
     var book = {
         id: bookID,
@@ -64,7 +64,7 @@ $("#btnUpdate").click(function () {
         title: bookTitle,
         author: bookAuthor,
         price:bookPrice,
-        date:date
+        // date:date
     }
 
     $.ajax({
@@ -94,11 +94,11 @@ function loadAllBooks() {
         success: function (resp) {
             console.log(resp);
             for (let book of resp.data) {
-                var row = '<tr><td>' + book.id + '</td><td>' + book.category + '</td><td>' + book.title + '</td><td>' + book.author + '</td><td>' + book.price + '</td><td>' + book.date + '</td></tr>';
+                var row = '<tr><td>' + book.id + '</td><td>' + book.category + '</td><td>' + book.title + '</td><td>' + book.author + '</td><td>' + book.price + '</td></tr>';
                 $("#tblBook").append(row);
             }
             bindRowClickEvents();
-            setTextFieldValues("","","","","","");
+            setTextFieldValues("","","","","");
             $("#txtBookID").focus();
         }
     });
@@ -113,7 +113,7 @@ function bindRowClickEvents() {
         let title = $(this).children(":eq(2)").text();
         let author = $(this).children(":eq(3)").text();
         let price = $(this).children(":eq(4)").text();
-        let date = $(this).children(":eq(5)").text();
+        // let date = $(this).children(":eq(5)").text();
         // console.log(id, name, address, salary);
 
         //setting table details values to text fields
@@ -122,17 +122,17 @@ function bindRowClickEvents() {
         $('#txtTitle').val(title);
         $('#txtAuthor').val(author);
         $('#txtBookPrice').val(price);
-        $('#txtDate').val(date);
+        // $('#txtDate').val(date);
 
     });
 }
 
 //set values for text fields
-function setTextFieldValues(id, category, title, author, price, date) {
+function setTextFieldValues(id, category, title, author, price) {
     $('#txtBookID').val(id);
     $('#txtCategory').val(category);
     $('#txtTitle').val(title);
     $('#txtAuthor').val(author);
     $('#txtBookPrice').val(price);
-    $('#txtDate').val(date);
+    // $('#txtDate').val(date);
 }

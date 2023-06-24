@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Book Catalog</title>
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/header.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        ul > li {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+<header class="fixed-top " id="header">
+    <div class="container d-flex align-items-center justify-content-between">
+        <h1 class="logo"style="cursor: pointer" id="adminClick"><a>BOOK CATALOG</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a class=" " id="h">Home</a></li>
+                <li><a class="getstarted scrollto" id="get">Get Started</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+<!-- ======= Hero Section ======= -->
+<main id="home">
+    <section class="d-flex align-items-center" id="hero" style="display: block">
+
+        <div class="container-fluid" data-aos="fade-up">
+            <div class="row justify-content-center">
+                <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                    <h1>Books are packed with knowledge,
+                        they give you life lessons, and
+                        they teach you about hardships.</h1>
+                    <h2>Available more Books...</h2>
+                    <div><a class="btn-get-started scrollto" id="getS" style="cursor: pointer">Get Started</a></div>
+                </div>
+                <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+                    <img alt=""  class="img-fluid animated" src="assets/img/photo_2023-06-24_19-52-54.jpg">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End Hero -->
+</main>
 
 </body>
 </html>

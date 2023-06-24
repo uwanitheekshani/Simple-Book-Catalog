@@ -134,3 +134,23 @@ function setTextFieldValues(id, category, title, author, price) {
     $('#txtBookPrice').val(price);
     // $('#txtDate').val(date);
 }
+
+$("#btnSearch").click(function () {
+    let searchOT = $("#searchOT").val();
+    $.ajax({
+        url: baseURL+"book/search?searchOT=" + searchOT,
+        dataType:"json",
+        success: function (resp) {
+            alert(resp.message);
+            // resp.data.image_1;
+            for (let book of resp.data) {
+                var row = '<tr><td>' + book.bookId + '</td><td>' + book.category + '</td><td>' + book.title + '</td><td>' + book.author + '</td><td>' + book.price + '</td></tr>';
+                $("#tblBook").append(row);
+            }
+            // loadAllCars();
+        },
+        error:function (error){
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
+});

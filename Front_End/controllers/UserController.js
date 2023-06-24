@@ -10,9 +10,9 @@ $("#h").click(function () {
     $("#bookContent").css('display','none');
 });
 
-$("#btnLogin").click(function () {
-    $("#bookContent").css('display','block');
-    $("#home").css('display','none');
-    $("#userLogin").css('display','none');
-});
+// $("#btnLogin").click(function () {
+//     $("#bookContent").css('display','block');
+//     $("#home").css('display','none');
+//     $("#userLogin").css('display','none');
+// });
 

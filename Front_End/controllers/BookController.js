@@ -163,7 +163,7 @@ $("#userLogin").click(function (){
     let password = $("#typePasswordX-2").val();
 
     $.ajax({
-        url: baseURL+"customerLogin?email="+email,
+        url: baseURL+"userLogin?email="+email,
         method: "get",
         dataType:"json",
         success: function (res) {
@@ -176,24 +176,10 @@ $("#userLogin").click(function (){
                     showConfirmButton: false,
                     timer: 1500
                 });
-                updateCarStatus();
-                loadAllCars();
-                carAppend();
-                $("#storeContent").css('display','block');
-                $("#mainh").css('display','none');
-                $("#main3").css('display','none');
-                $("#foot").css('display','none');
-                $("#checkOutContent").css('display','none');
-                $("#accountContent").css('display','none');
-                $("#loginContent").css('display','none');
-                $("#cusRegiContent").css('display','none');
-                $("#cusUpdateContent").css('display','none');
-                $("#ae").text(email);
-                $("#anic").text(res.data.nic);
-                $("#an").text(res.data.cusName);
-                $("#store").css('pointer-events','auto');
-                $("#checkout").css('pointer-events','auto');
-                $("#account").css('pointer-events','auto');
+                loadAllBooks();
+                $("#bookContent").css('display','block');
+                $("#home").css('display','none');
+                $("#userLogin").css('display','none');
             }else {
                 Swal.fire({
                     position: 'center',
@@ -203,7 +189,7 @@ $("#userLogin").click(function (){
                     timer: 1500
                 });
             }
-            clearCustomerLoginTextFields();
+            clearUserLoginTextFields();
         },
         error:function(error){
             var jsObject=JSON.parse(error.responseText);
@@ -218,7 +204,7 @@ $("#userLogin").click(function (){
     });
 });
 
-function clearCustomerLoginTextFields() {
-    $('#txtEEmail').val("");
-    $('#txtPasswordE').val("");
+function clearUserLoginTextFields() {
+    $('#typeEmailX-2').val("");
+    $('#typePasswordX-2').val("");
 }

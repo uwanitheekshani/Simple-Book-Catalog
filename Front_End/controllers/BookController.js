@@ -12,12 +12,27 @@ $("#btnBook").click(function () {
         data: formData,
         dataType:"json",
         success: function (res) {
-            alert(res.message);
+            // alert(res.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: "Book Added Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
             loadAllBooks();
         },
         error:function(error){
             var jsObject=JSON.parse(error.responseText);
-            alert(jsObject.message);
+            // alert(jsObject.message);
+            alert(cause);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: "Book Added Failed",
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 });
@@ -34,11 +49,26 @@ $("#btnDelete").click(function () {
         method: "delete",
         dataType:"json",
         success: function (resp) {
-            alert(resp.message);
+            // alert(resp.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: "Book Deleted Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
             loadAllBooks();
         },
         error:function (error){
             alert(JSON.parse(error.responseText).message);
+            alert(cause);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: "Book Deleted Failed",
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     });
 });
@@ -68,12 +98,26 @@ $("#btnUpdate").click(function () {
         data:JSON.stringify(book),
         dataType:"json",
         success: function (res) {
-            alert(res.message);
+            // alert(res.message);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: "Book Updated Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
             loadAllBooks();
         },
         error:function (error){
             let cause= JSON.parse(error.responseText).message;
             alert(cause);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: "Book Updated Failed",
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
 
     });

@@ -16,4 +16,5 @@ import lombok.ToString;
 public class UserDTO {
     private String email;
     private String password;
+
 }

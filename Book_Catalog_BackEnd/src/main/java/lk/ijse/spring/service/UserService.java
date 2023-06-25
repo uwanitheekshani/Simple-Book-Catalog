@@ -7,5 +7,6 @@ import lk.ijse.spring.dto.UserDTO;
  * @project Book_Catalog_BackEnd
  */
 public interface UserService {
+
     UserDTO searchUserByEmail(String email);
 }

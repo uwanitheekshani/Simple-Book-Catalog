@@ -15,6 +15,7 @@ public interface BookRepo extends JpaRepository<Book,String> {
 
     Book findBookByTitle(String title);
 
+
     @Query(value = "SELECT * FROM book WHERE title LIKE %:searchTerm% OR author LIKE %:searchTerm%", nativeQuery = true)
     List<Book> searchByTitleOrAuthor(@Param("searchTerm") String searchTerm);
 }

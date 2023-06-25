@@ -9,6 +9,7 @@ public class ResponseUtil {
         private String message;
         private Object data;
 
+
         public ResponseUtil() {
         }
 

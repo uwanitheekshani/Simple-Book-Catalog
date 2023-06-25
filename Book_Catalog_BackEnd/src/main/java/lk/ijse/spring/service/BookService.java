@@ -23,5 +23,5 @@ public interface BookService {
 
     public BookDTO searchBookByTitle(String title);
 
-    public List<Book> searchByTitleOrAuthor(String searchTerm);
+    public ArrayList<BookDTO> searchByTitleOrAuthor(String searchTerm);
 }

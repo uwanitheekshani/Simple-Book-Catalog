@@ -128,25 +128,22 @@ function setTextFieldValues(id, category, title, author, price) {
 }
 
 $("#btnSearch").click(function () {
-    let searchOT = $("#searchOT").val();
+    let titleOrAuthor = $("#searchOT").val();
+    $("#tblBook").empty();
+   console.log(titleOrAuthor);
     $.ajax({
-        url: baseURL+"book/search?searchOT=" + searchOT,
-        dataType:"json",
+        url: baseURL + "book?title="+titleOrAuthor,
+        dataType: "json",
+        async: false,
         success: function (resp) {
-            alert(resp.message);
-            // resp.data.image_1;
-            for (let book of resp.data) {
+            let book=resp.data;
+         console.log(resp.data);
                 var row = '<tr><td>' + book.bookId + '</td><td>' + book.category + '</td><td>' + book.title + '</td><td>' + book.author + '</td><td>' + book.price + '</td></tr>';
                 $("#tblBook").append(row);
-            }
-        },
-        error:function (error){
-            alert(JSON.parse(error.responseText).message);
+                // console.log(book);
         }
     });
 });
-
-
 
 // ========================Validation========================
 

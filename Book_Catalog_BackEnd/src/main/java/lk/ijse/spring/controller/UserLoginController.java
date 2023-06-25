@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class UserLoginController {
     @Autowired
-    UserService service;
+   private UserService service;
 
     @GetMapping(params = "email")
     public ResponseUtil checkUser(String email) {

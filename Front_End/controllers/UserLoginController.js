@@ -1,7 +1,7 @@
 // ==================Login User====================
 $("#btnLogin").click(function (){
 
-    let email =  $("#typeEmailX-2").val();
+   let email =  $("#typeEmailX-2").val();
     let password = $("#typePasswordX-2").val();
 
     $.ajax({
@@ -49,3 +49,7 @@ function clearUserLoginTextFields() {
     $('#typeEmailX-2').val("");
     $('#typePasswordX-2').val("");
 }
+
+// $("#typeEmailX-2").on('keydown', function (event) {
+//         focusText($("#typePasswordX-2"));
+// });
